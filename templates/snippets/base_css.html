@@ -61,10 +61,11 @@
 		border: solid 1px darkcyan;
 		padding: 20px;
 		display: grid;
-		grid-template-columns: repeat(4, 1fr);
+		grid-template-columns: 1fr 1fr 1fr 1fr 0.5fr 1fr;
+		grid-template-rows: 1fr 1fr;
 		grid-template-areas:
-		"name notes emails persona"
-		"created calls docs btn" 
+		"name notes emails time_title time btn"
+		"created calls docs time_title time btn" 
 		;
 		justify-items: start;
 		align-items: center;
@@ -98,6 +99,16 @@
 
 	.persona {
 		grid-area: persona;
+		justify-self: center;
+	}
+
+	.time_title {
+		grid-area: time_title;
+		justify-self: center;
+	}
+
+	.time {
+		grid-area: time;
 		justify-self: center;
 	}
 
