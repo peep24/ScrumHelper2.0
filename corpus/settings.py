@@ -45,6 +45,8 @@ INSTALLED_APPS = [
 
     'personal',
     'account',
+    'tasks',
+    'teams',
 
 
     'django.contrib.admin',

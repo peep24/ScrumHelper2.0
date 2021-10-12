@@ -47,4 +47,65 @@
 		
 	}
 
+	.pls_login {
+		margin-top: 50px;
+		text-align: center;
+	}
+
+	.page_title {
+		margin-bottom: 15px;
+	}
+
+	.indi_account {
+		background-color: gainsboro;
+		border: solid 1px darkcyan;
+		padding: 20px;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-areas:
+		"name notes emails persona"
+		"created calls docs btn" 
+		;
+		justify-items: start;
+		align-items: center;
+		border-radius: 10px;
+		margin-bottom: 15px;
+	}
+
+	.name {
+		grid-area: name;
+	}
+
+	.created {
+		grid-area: created;
+	}
+
+	.emails {
+		grid-area: emails;
+	}
+
+	.notes {
+		grid-area: notes;
+	}
+
+	.calls {
+		grid-area: calls;
+	}
+
+	.docs {
+		grid-area: docs;
+	}
+
+	.persona {
+		grid-area: persona;
+		justify-self: center;
+	}
+
+	.indi_account button {
+		grid-area: btn;
+		justify-self: center;
+	}
+
+
+
 </style>
