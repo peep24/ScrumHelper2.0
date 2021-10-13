@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style type="text/css">
+	.my-grid{
+		border: 1px solid black;
+	}
+	.my-grid-item{
+		border: 1px solid blue;
+	}
+</style>
+
+<div class="container">
+
+	{% if request.user.is_authenticated %}
+
+	<h3 class="page_title">Active Tasks</h3>
+
+    <form class="new_task_form" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Submit</button>
+    </form>
+
+
+	{% else %}
+
+	<h3 class="pls_login">Please login</h3>
+
+	{% endif %}
+
+	
+</div>
+{% endblock content %}
+
+

@@ -23,6 +23,16 @@ from personal.views import (
 	home_screen_view
 )
 
+from tasks.forms import newTask
+
+from tasks.views import (
+    create_task_view,
+    view_all_tasks,
+
+)
+    
+
+
 from account.views import (
     register_view,
     login_view,
@@ -31,10 +41,12 @@ from account.views import (
 )
 
 
-
-
 urlpatterns = [
     path('', home_screen_view, name='home'),
+
+    path('new_task', create_task_view, name='new_task'),
+    path('view_all_tasks', view_all_tasks, name='view_all_tasks'),
+
     path('admin/', admin.site.urls),
 
     path('register/', register_view, name="register"),

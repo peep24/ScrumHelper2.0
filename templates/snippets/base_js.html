@@ -1,5 +1,22 @@
 <script type="text/javascript">
 
 
+$(function() {
+
+
+    $('.new_task_form').submit(function(e) {
+        e.preventDefault();
+        $.ajax({
+             type: 'POST',
+             url: '/new_task',
+             data: $(this).serialize()
+        });
+        $('.new_task_form').trigger("reset");
+        location.reload();
+     })
+    
+
+})
+
 
 </script>

@@ -18,24 +18,11 @@
 					<div class="dropdown dropleft show p-2">
 						<div class="d-flex flex-row">
 							
-							<div class="btn-group dropleft">
-								<div class="d-flex notifications-icon-container rounded-circle align-items-center mr-3" id="id_chat_notification_dropdown_toggle" data-toggle="dropdown">
-									<span id="id_chat_notifications_count" class="notify-badge"></span>
-									<span class="d-flex material-icons notifications-material-icon m-auto align-items-center">Link1</span>
-									<div class="dropdown-menu scrollable-menu" aria-labelledby="id_chat_notification_dropdown_toggle" id="id_chat_notifications_container">
-											
-									</div>
-								</div>
-							</div>
+	
+							<a class="link" href="/new_task">New Task</a>
 
-							<div class="btn-group dropleft">
-								<div class="d-flex notifications-icon-container rounded-circle align-items-center mr-3" id="id_notification_dropdown_toggle" data-toggle="dropdown" onclick="setGeneralNotificationsAsRead()">
-									<span id="id_general_notifications_count" class="notify-badge"></span>
-									<span class="d-flex material-icons notifications-material-icon m-auto align-items-center">Link2</span>
-									<div class="dropdown-menu scrollable-menu" aria-labelledby="id_notification_dropdown_toggle" id="id_general_notifications_container">										
-									</div>
-								</div>
-							</div>
+							<a class="link" href="/all_tasks">All Tasks</a>
+
 
 							<div id="account_menu" class="btn-group ">
 								<!-- <img class="account-image rounded-circle m-auto d-block dropdown-toggle" id="id_profile_links" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="{{request.user.profile_image.url}}" width="40" height="40"> -->
