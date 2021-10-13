@@ -18,21 +18,28 @@
 
 	
 
-	{% for iter in obj %}
+	{% for key,iter in obj.items %}
+		{% for i in iter %}
 
 		<div class="indi_account">
-			<h4 class="name">{{ iter.task_name }}</h4>
-			<h5 class="created">{{ iter.client }}</h5>
-			<h5 class="calls">{{ iter.due_date }}</h5>
-			<h5 class="emails">{{ iter.status }}</h5>
-			<h5 class="docs">{{ iter.owner }}</h5>
-			<h5 class="time_title">Anticipated <br> time:</h5>
-			<h5 class="time">3h</h5>
-			<button type="button" class="btn btn-secondary">Set Time</button>
-		</div> 
+			<h4 class="details">Details</h4>
+			<h5 class="name">Title: {{ i.task_name }}</h4>
+			<h5 class="client">Client: {{ i.client }}</h5>
+
+			<h5 class="due">Due: 12/10/2021</h5>
+			<h5 class="owner">Owner: {{ i.owner }}</h5>
 
 		
+			<h5 class="task_status">Task Status: {{i.status}}</h5>
+			<h5 class="indi_status">Individual sent: Blocked</h5>
 
+			<h5 class="time">2H</h5>
+
+			<button type="button" class="setTime btn btn-secondary">Set Time</button>
+			<button type="button" class="unjoin btn btn-secondary">Unjoin</button>
+		</div> 
+
+		{% endfor %}
 	{% endfor %}
 
 

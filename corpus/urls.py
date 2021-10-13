@@ -28,6 +28,7 @@ from tasks.forms import newTask
 from tasks.views import (
     create_task_view,
     view_all_tasks,
+    join_task,
 
 )
     
@@ -46,6 +47,8 @@ urlpatterns = [
 
     path('new_task', create_task_view, name='new_task'),
     path('view_all_tasks', view_all_tasks, name='view_all_tasks'),
+
+    path('task_join/<int:id>', join_task, name ='join_task'),
 
     path('admin/', admin.site.urls),
 

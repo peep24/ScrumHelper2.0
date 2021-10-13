@@ -36,6 +36,8 @@ class AccountTask(models.Model):
     account_id = models.ForeignKey(Account, on_delete=models.CASCADE)
     active = models.BooleanField(default=True)
     last_modified = models.DateTimeField(auto_now_add=True)
+    user_status = models.CharField(max_length=40, choices=STATUS_CHOICES, default='active')
+    user_blocked = models.BooleanField(default=False)
 
 
     # Metadata

@@ -21,15 +21,15 @@
 
 	{% for iter in obj %}
 
-		<div class="indi_account">
-			<h4 class="name">{{ iter.task_name }}</h4>
-			<h5 class="created">{{ iter.client }}</h5>
-			<h5 class="calls">{{ iter.due_date }}</h5>
-			<h5 class="emails">{{ iter.status }}</h5>
-			<h5 class="docs">{{ iter.owner }}</h5>
-			<h5 class="time_title">Anticipated <br> time:</h5>
-			<h5 class="time">3h</h5>
-			<button type="button" class="btn btn-secondary">Join</button>
+		<div class="all_tasks">
+			<h5 class="all_tasks_name">{{ iter.task_name }}</h5>
+			<h5 class="all_tasks_client">{{ iter.client }}</h5>
+			<h5 class="all_tasks_due">{{ iter.task_id }}</h5>
+			<h5 class="all_tasks_status">{{ iter.status }}</h5>
+			<h5 class="all_tasks_owner">{{ iter.owner }}</h5>
+			<a href= "/task_join/{{ iter.task_id }}" />
+				<button  type="button" class="btn btn-secondary">Join</button>
+			</a>	
 		</div> 
 
 		

@@ -61,61 +61,138 @@
 		border: solid 1px darkcyan;
 		padding: 20px;
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr 1fr 0.5fr 1fr;
-		grid-template-rows: 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
 		grid-template-areas:
-		"name notes emails time_title time btn"
-		"created calls docs time_title time btn" 
+		"details details details details"
+		"name name name name"
+		"client due owner time"  
+		"task_status task_status unjoin unjoin" 
+		"indi_status indi_status set set"
 		;
 		justify-items: start;
-		align-items: center;
 		border-radius: 10px;
 		margin-bottom: 15px;
+	}
+
+	.details {
+		font-weight: bold;
+		grid-area: details;
+		align-items: center;
 	}
 
 	.name {
 		grid-area: name;
 	}
 
-	.created {
-		grid-area: created;
+	.client {
+		grid-area: client;
 	}
 
-	.emails {
-		grid-area: emails;
+	.due {
+		grid-area: due;
 	}
 
-	.notes {
-		grid-area: notes;
+	.owner {
+		grid-area: owner;
 	}
 
-	.calls {
-		grid-area: calls;
+
+
+	.task_status {
+		grid-area: task_status;
+		margin-left: 50px;
+		align-self: center;
 	}
 
-	.docs {
-		grid-area: docs;
+	.indi_status {
+		grid-area: indi_status;
+		margin-left: 50px;
+		align-self: center;
 	}
 
-	.persona {
-		grid-area: persona;
-		justify-self: center;
-	}
-
-	.time_title {
-		grid-area: time_title;
-		justify-self: center;
-	}
 
 	.time {
 		grid-area: time;
 		justify-self: center;
+		align-self: center;
 	}
 
-	.indi_account button {
+
+	.setTime {
+		grid-area: set;
+		justify-self: center;
+		height: 30px;
+		width: 100px;
+		line-height: 30px;
+		padding: 0;
+	}
+
+	.unjoin {
+		grid-area: unjoin;
+		justify-self: center;
+		height: 30px;
+		width: 100px;
+		line-height: 30px;
+		padding: 0;
+	}
+
+	.unjoin:hover, .setTime:hover {
+		background-color: darkcyan;
+	}
+
+
+	/* view all tasks */
+
+	.all_tasks {
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		grid-template-areas: 
+		"client status name due lead btn"
+		;
+		background-color: gainsboro;
+		border: solid 1px darkcyan;
+		padding: 20px;
+		justify-items: start;
+		align-items: center;
+		border-radius: 10px;
+		margin-bottom: 15px;
+	}
+
+	.all_tasks_client {
+		grid-area: client;
+	}
+
+	.all_task_name {
+		grid-area: name;
+	}
+
+	.all_task_due {
+		grid-area: due;
+	}
+
+	.all_task_status {
+		grid-area: status;
+	}
+
+	.all_task_owner {
+		grid-area: owner;
+	}
+
+	.all_tasks button {
 		grid-area: btn;
 		justify-self: center;
+		align-self: center;
+		height: 30px;
+		width: 100px;
+		line-height: 30px;
+		padding: 0;
 	}
+
+	.all_tasks button:hover {
+		background-color: darkcyan;
+	}
+
 
 	/*  New Task Form   */
 
@@ -134,6 +211,8 @@
 	.new_task_form textarea {
 		height: 30px;
 	}
+
+
 
 	.new_task_form button {
 		
