@@ -57,6 +57,7 @@
 	}
 
 	.indi_account {
+		position: relative;
 		background-color: gainsboro;
 		border: solid 1px darkcyan;
 		padding: 20px;
@@ -68,7 +69,7 @@
 		"name name name name"
 		"client due owner time"  
 		"task_status task_status unjoin unjoin" 
-		"indi_status indi_status set set"
+		"indi_status indi_status edit edit"
 		;
 		justify-items: start;
 		border-radius: 10px;
@@ -119,8 +120,8 @@
 	}
 
 
-	.setTime {
-		grid-area: set;
+	.edit {
+		grid-area: edit;
 		justify-self: center;
 		height: 30px;
 		width: 100px;
@@ -137,7 +138,7 @@
 		padding: 0;
 	}
 
-	.unjoin:hover, .setTime:hover {
+	.unjoin:hover, .edit:hover {
 		background-color: darkcyan;
 	}
 
@@ -224,6 +225,26 @@
 		margin: 0 20px;
 		color: inherit;
 		text-decoration: none !important;
+	}
+
+	/*---------------------------*/
+
+	.staff_task_edit {
+			background-color: darkred;
+			color: white;
+			font-weight: 700;
+			padding: 0 10px;
+			border-radius: 10px;
+			height: 30px;
+			line-height: 30px;
+			position: absolute;
+			top: 20px;
+			right: 20px;
+			cursor: pointer;
+	}
+
+	.staff_task_edit:hover {
+		background-color: rgb(100, 5, 5);
 	}
 
 </style>

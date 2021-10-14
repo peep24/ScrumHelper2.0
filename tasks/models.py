@@ -17,8 +17,8 @@ class Tasks(models.Model):
     task_id = models.CharField(max_length=14, validators=[MinLengthValidator(8)], primary_key=True, blank=False, null=False)
     task_name = models.TextField(blank=True, null=True)
     client = models.CharField(max_length=40, blank=True, null=True)
-    start_date = models.DateTimeField(blank=True, null=True)
-    end_date = models.DateTimeField(blank=True, null=True)
+    start_date = models.DateField(blank=True, null=True)
+    end_date = models.DateField(blank=True, null=True)
     status = models.CharField(max_length=40, choices=STATUS_CHOICES, default='active')
     owner = models.CharField(max_length=40, blank=True, null=True)
     created_by = models.ForeignKey(Account, on_delete=models.CASCADE)
@@ -38,7 +38,7 @@ class AccountTask(models.Model):
     last_modified = models.DateTimeField(auto_now_add=True)
     user_status = models.CharField(max_length=40, choices=STATUS_CHOICES, default='active')
     user_blocked = models.BooleanField(default=False)
-
+    time = models.TimeField(default='20:00')
 
     # Metadata
     class Meta:

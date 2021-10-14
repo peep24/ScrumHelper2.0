@@ -29,7 +29,8 @@ from tasks.views import (
     create_task_view,
     view_all_tasks,
     join_task,
-
+    delete_task_connection,
+    user_edit_task,
 )
     
 
@@ -46,9 +47,11 @@ urlpatterns = [
     path('', home_screen_view, name='home'),
 
     path('new_task', create_task_view, name='new_task'),
+    path('user_edit_task/<int:id>', user_edit_task, name='user_edit_task'),
     path('view_all_tasks', view_all_tasks, name='view_all_tasks'),
 
     path('task_join/<int:id>', join_task, name ='join_task'),
+    path('delete_task_connection/<int:id>', delete_task_connection, name ='delete_task_connection'),
 
     path('admin/', admin.site.urls),
 

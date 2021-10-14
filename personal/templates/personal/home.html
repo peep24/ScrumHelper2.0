@@ -22,6 +22,9 @@
 		{% for i in iter %}
 
 		<div class="indi_account">
+			{% if request.user.is_staff %}
+				<div class="staff_task_edit">Edit group task</div>
+			{% endif %}
 			<h4 class="details">Details</h4>
 			<h5 class="name">Title: {{ i.task_name }}</h4>
 			<h5 class="client">Client: {{ i.client }}</h5>
@@ -35,8 +38,10 @@
 
 			<h5 class="time">2H</h5>
 
-			<button type="button" class="setTime btn btn-secondary">Set Time</button>
-			<button type="button" class="unjoin btn btn-secondary">Unjoin</button>
+			<a class="unjoin btn btn-secondary" href="/delete_task_connection/{{ i.task_id }}">Unjoin</a>
+			<a class="edit btn btn-secondary" href="user_edit_task/{{ i.task_id }}">Edit</a>
+			
+			
 		</div> 
 
 		{% endfor %}

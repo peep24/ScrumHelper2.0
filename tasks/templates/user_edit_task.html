@@ -14,7 +14,7 @@
 
 	{% if request.user.is_authenticated %}
 
-	<h3 class="page_title">Active Tasks</h3>
+	<h3 class="page_title">Edit Tasks</h3>
 
     <form class="new_task_form" method="post">
         {% csrf_token %}
@@ -37,5 +37,4 @@
 	
 </div>
 {% endblock content %}
-
 
