@@ -34,9 +34,18 @@
 
 		
 			<h5 class="task_status">Task Status: {{i.status}}</h5>
-			<h5 class="indi_status">Individual sent: Blocked</h5>
+		
+			{% for object,value in link.items %}
+				{% if value.task_id.task_id == i.task_id %}
+					<h5 class="indi_status">Individual sent: {{value.user_status}}</h5>
+					<h5 class="time">{{value.time|date:"G:i:s"}}</h5>
+	
+				{% endif %}	
 
-			<h5 class="time">2H</h5>
+			{% endfor %}	
+
+
+
 
 			<a class="unjoin btn btn-secondary" href="/delete_task_connection/{{ i.task_id }}">Unjoin</a>
 			<a class="edit btn btn-secondary" href="user_edit_task/{{ i.task_id }}">Edit</a>

@@ -38,7 +38,7 @@ class AccountTask(models.Model):
     last_modified = models.DateTimeField(auto_now_add=True)
     user_status = models.CharField(max_length=40, choices=STATUS_CHOICES, default='active')
     user_blocked = models.BooleanField(default=False)
-    time = models.TimeField(default='20:00')
+    time = models.TimeField(default='01:00')
 
     # Metadata
     class Meta:

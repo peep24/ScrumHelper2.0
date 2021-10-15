@@ -62,8 +62,10 @@ def user_edit_task(request, id, *args, **kwargs):
         if form.is_valid():
 
             # instance = form.save(commit=False)
-            accountTask = AccountTask.objects.filter(task_id=id)
-            for i in accountTask:
+            accountTaskObj = AccountTask.objects.filter(task_id=id)
+          
+            for i in accountTaskObj:
+                print("iteration")
                 i.time = form['time'].value()
                 i.user_status = form['user_status'].value()
                 i.save()
