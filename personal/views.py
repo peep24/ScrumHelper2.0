@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from tasks.models import AccountTask, Tasks 
+from django.http import HttpResponse
 
 def home_screen_view(request):
 	context = {}
@@ -26,3 +27,5 @@ def home_screen_view(request):
 
 
 
+def permission_not_granted(request):
+		return HttpResponse("You are not authorised to view this", content_type="text/plain")

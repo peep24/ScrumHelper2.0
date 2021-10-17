@@ -23,7 +23,7 @@
 
 		<div class="indi_account">
 			{% if request.user.is_staff %}
-				<div class="staff_task_edit">Edit group task</div>
+				<a href="/manager_edit_task/{{ i.task_id }}"><div class="staff_task_edit">Edit group task</div></a>
 			{% endif %}
 			<h4 class="details">Details</h4>
 			<h5 class="name">Title: {{ i.task_name }}</h4>

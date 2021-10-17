@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style type="text/css">
+	.my-grid{
+		border: 1px solid black;
+	}
+	.my-grid-item{
+		border: 1px solid blue;
+	}
+</style>
+
+<div class="container">
+
+	{% if request.user.is_authenticated %}
+
+	<h3 class="page_title">Edit Tasks</h3>
+
+    <form class="new_task_form" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Submit</button>
+    </form>
+
+	{% for form in formset.forms %}
+	tr><td> {{ form.errors }} </td><td> {{ form.non_field_errors }}</td></tr>
+	<tr><td>{{ form.id }}</td><td>{{ form.instance.comments }}</td><td>{{ form.operation_type }}<br>{{ form.related_account }}</td><td>{{ form.category }}</td></tr>
+	  {% endfor %}
+
+
+	{% else %}
+
+	<h3 class="pls_login">Please login</h3>
+
+	{% endif %}
+
+	
+</div>
+{% endblock content %}
+

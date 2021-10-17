@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from tasks.models import Tasks, AccountTask
 from django.views.decorators.http import require_http_methods
-from tasks.forms import newTask, user_edit_form
+from django.contrib.auth.decorators import user_passes_test
+from tasks.forms import newTask, user_edit_form, manager_edit_task_form
 from personal.views import home_screen_view
 
 # @require_http_methods(["POST"])
@@ -77,7 +78,47 @@ def user_edit_task(request, id, *args, **kwargs):
 
     else: form= user_edit_form()
 
-
-
-
     return render(request, "user_edit_task.html", {'form': form})
+
+
+
+@user_passes_test(lambda u: u.is_staff, login_url='/permission_not_granted/')
+def manager_edit_task(request, id, *args, **kwargs):
+    
+    if request.POST:
+        form = manager_edit_task_form(request.POST)
+
+        if form.is_valid():
+
+            TaskObj = Tasks.objects.get(task_id=id)
+
+
+            TaskObj.task_name = form['task_name'].value()
+            TaskObj.client = form['client'].value()
+
+            TaskObj.start_date = form['start_date'].value()
+            TaskObj.end_date = form['end_date'].value()
+            TaskObj.status = form['status'].value()
+            
+            TaskObj.owner = form['owner'].value()
+
+            TaskObj.save()
+
+            return redirect(home_screen_view)
+        
+        else:
+            print("not valid")
+
+    else: 
+        TaskObj = Tasks.objects.get(task_id=id)
+        form= manager_edit_task_form(initial={
+            'task_id': TaskObj.task_id,
+            'task_name': TaskObj.task_name,
+            'client': TaskObj.client,
+            'start_date': TaskObj.start_date,
+            'end_date': TaskObj.end_date,
+            'status': TaskObj.status,
+            'owner': TaskObj.owner,
+            })
+
+    return render(request, "manager_edit_task.html", {'form': form})

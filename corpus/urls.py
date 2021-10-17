@@ -20,7 +20,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from personal.views import (
-	home_screen_view
+	home_screen_view,
+    permission_not_granted,
 )
 
 from tasks.forms import newTask
@@ -31,6 +32,7 @@ from tasks.views import (
     join_task,
     delete_task_connection,
     user_edit_task,
+    manager_edit_task,
 )
     
 
@@ -48,6 +50,7 @@ urlpatterns = [
 
     path('new_task', create_task_view, name='new_task'),
     path('user_edit_task/<int:id>', user_edit_task, name='user_edit_task'),
+    path('manager_edit_task/<int:id>', manager_edit_task, name='manager_edit_task'),
     path('view_all_tasks', view_all_tasks, name='view_all_tasks'),
 
     path('task_join/<int:id>', join_task, name ='join_task'),
@@ -58,6 +61,8 @@ urlpatterns = [
     path('register/', register_view, name="register"),
     path('login/', login_view, name="login"),
     path('logout/', logout_view, name="logout"),
+
+    path('permission_not_granted/', permission_not_granted, name="logout"),
 
     # Password reset links (ref: https://github.com/django/django/blob/master/django/contrib/auth/views.py)
     path('password_change/done/', auth_views.PasswordChangeDoneView.as_view(template_name='password_reset/password_change_done.html'), 
