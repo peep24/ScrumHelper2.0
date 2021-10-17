@@ -3,9 +3,6 @@ ScrumHelper2.0
 This is a concept application utilizing the Django framework. The idea is to build out a project management tool for a fictitious Marketing Technology firm. 
 ## Requirements
 
- Markup : * Bullet list
-              * Nested bullet
-                  * Sub-nested bullet etc
 
 * A functional user model with email address being the unique identifier for login.
 
@@ -27,3 +24,5 @@ This is a concept application utilizing the Django framework. The idea is to bui
 
 
  This is an open project to feel free to collaborate and join in 👍
+
+ ![This is an image]('readmeImg.jpg')
