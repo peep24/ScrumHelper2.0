@@ -23,4 +23,9 @@ This is a concept application utilizing the Django framework. The idea is to bui
 
 </ul>
 
+ Markup : * Bullet list
+              * Nested bullet
+                  * Sub-nested bullet etc
+          * Bullet list item 2
+
  This is an open project to feel free to collaborate and join in 👍
