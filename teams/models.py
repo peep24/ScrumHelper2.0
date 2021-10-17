@@ -6,7 +6,7 @@ def get_profile_image_filepath(self, filename):
 	return 'profile_images/' + str(self.pk) + '/profile_image.png'
 
 def get_default_profile_image():
-	return "default.png"
+	return "profile_image.png"
 
 class Teams(models.Model):
     """A typical class defining a model, derived from the Model class."""

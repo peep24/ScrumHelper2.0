@@ -18,6 +18,7 @@ from django.urls import path
 from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
+from django.conf.urls import include 
 
 from personal.views import (
 	home_screen_view,
@@ -41,7 +42,7 @@ from account.views import (
     register_view,
     login_view,
     logout_view,
-
+    account_search_view,
 )
 
 
@@ -62,7 +63,11 @@ urlpatterns = [
     path('login/', login_view, name="login"),
     path('logout/', logout_view, name="logout"),
 
-    path('permission_not_granted/', permission_not_granted, name="logout"),
+    path('account/', include('account.urls', namespace='account')),
+
+    path('search/', account_search_view, name="search"),
+
+    path('permission_not_granted/', permission_not_granted, name="permission_not_granted"),
 
     # Password reset links (ref: https://github.com/django/django/blob/master/django/contrib/auth/views.py)
     path('password_change/done/', auth_views.PasswordChangeDoneView.as_view(template_name='password_reset/password_change_done.html'), 
