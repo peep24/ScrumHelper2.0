@@ -25,4 +25,4 @@ This is a concept application utilizing the Django framework. The idea is to bui
 
  This is an open project to feel free to collaborate and join in 👍
 
- ![This is an image](../blob/master/readMeImg.jpg)
+ ![This is an image](../../blob/master/readMeImg.jpg)
